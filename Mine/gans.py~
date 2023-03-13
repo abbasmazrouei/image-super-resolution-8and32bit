@@ -1,0 +1,41 @@
+import numpy as np
+from PIL import Image  
+import PIL  
+import scipy.misc
+from ISR.models import RDN, RRDN
+import time
+
+#img = Image.open('data/input/sample/meerkat.png')
+#lr_img = np.array(img)
+
+
+
+img2 = Image.open('data/input/sample/Ali01.jpg')
+lr_img2 = np.array(img2)
+
+
+img3 = Image.open('data/input/sample/T1.tiff')
+lr_img3 = np.array(img3)
+
+
+rdn = RRDN(c_dim=3,weights='gans')
+
+
+
+#sr_img = rdn.predict(lr_img)
+#im=Image.fromarray(sr_img)
+#im.save('HighImageMainViewGan.jpg')
+
+
+
+
+sr_img2 = rdn.predict(lr_img2)
+im2=Image.fromarray(sr_img2)
+im2.save('HighImageMainViewGan2.jpg')
+
+
+start = time.process_time()
+sr_img3 = rdn.predict(lr_img3)
+im3=Image.fromarray(sr_img3)
+im3.save('HighImageMainViewGan3.jpg')
+End = (time.process_time() - start)/10

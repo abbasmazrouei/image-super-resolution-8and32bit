@@ -1,0 +1,4 @@
+D:/Packages/cv2/opencv/build/python/cv2/python-3.6
+D:/Packages/cv2/opencv/build/python/cv2
+C:/ProgramData/Anaconda3/Lib/site-packages/cv2
+pyinstaller --onefile --paths="/usr/lib/python3.9/site-packages/cv2/python-3.9" main.py

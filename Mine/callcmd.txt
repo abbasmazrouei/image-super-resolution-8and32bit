@@ -1,0 +1,6 @@
+import sys
+
+number=sys.argv[1]
+print('arguments', sys.argv)
+for arg in sys.argv:
+    print()
