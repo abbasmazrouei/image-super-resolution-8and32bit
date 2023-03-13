@@ -1,0 +1,43 @@
+import numpy as np
+from PIL import Image  #import scipy.misc
+from ISR.models import RDN, RRDN
+import time
+import cv2 as cv
+
+#img2 = cv.imread('C:/Users/Administrator/Desktop/A.mazrouei/h2.tiff')
+
+
+img3 = cv.imread('C:/Users/Administrator/Desktop/A.mazrouei/h3.tiff')
+#img3 = cv.imread('C:/Users/Administrator/Desktop/A.mazrouei/image-super-resolution/sandal.jpg')
+
+rdn = RRDN(c_dim=3,weights='gans')
+
+
+
+img3 = cv.resize(img3, None, fx = 1/2, fy = 1, interpolation = cv.INTER_CUBIC)
+
+
+#sr_img2 = cv.resize(sr_img2, None, fx = 1, fy = 1/4, interpolation = cv.INTER_CUBIC)
+#cv.imwrite('HighImageMainViewGan2.tiff',sr_img2)
+
+
+
+
+#sr_img2 = rdn.predict(img2)
+#cv.imwrite('img2.tiff',sr_img2)
+#cv.imwrite('HighImageMainViewGan2.tiff',sr_img2)
+
+
+start = time.process_time()
+sr_img3 = rdn.predict(img3)
+
+width = int(sr_img3.shape[1])
+height = int(890)
+dim = (width, height)
+  
+# resize image
+#resized = cv.resize(sr_img3, dim, interpolation = cv.INTER_CUBIC)
+#cv.imwrite('HighImageMainViewGan3.tiff',resized)
+cv.imwrite('H3.tiff',sr_img3)
+
+End = (time.process_time() - start)/10
