@@ -263,28 +263,6 @@ source: [ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks](http
 ## Contribute
 We welcome all kinds of contributions, models trained on different datasets, new model architectures and/or hyperparameters combinations that improve the performance of the currently published model.
 
-Will publish the performances of new models in this repository.
-
-See the [Contribution](CONTRIBUTING.md) guide for more details.
-
-#### Bump version
-To bump up the version, use
-```
-bumpversion {part} setup.py
-```
-
-## Citation
-Please cite our work in your publications if it helps your research.
-
-```BibTeX
-@misc{cardinale2018isr,
-  title={ISR},
-  author={Francesco Cardinale et al.},
-  year={2018},
-  howpublished={\url{https://github.com/idealo/image-super-resolution}},
-}
-```
-
 ## Maintainers
 * Francesco Cardinale, github: [cfrancesco](https://github.com/cfrancesco)
 * Dat Tran, github: [datitran](https://github.com/datitran)
